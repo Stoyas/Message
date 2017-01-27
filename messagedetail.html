@@ -1,0 +1,22 @@
+<!-- messagedetail -->
+<div>
+  <img src = "{{y.sender_img}}" style="width: 5%"> 
+  <p>"sender":{{y.sender}}</p>
+  <p>"title":{{y.title}}</p>
+  <p>"description":{{y.description}}</p>
+  <p>"recipient":{{y.recipient}}</p>
+  <p>"created_at":{{y.created_at}}<p>
+  <p>"important":{{y.important}}</p>
+  <div ng-repeat="z in replyedmessage track by $index">
+    <p>replys : {{z}}</p>
+</div>
+  <img src = "{{y.recipient_img}}" style="width: 5%">
+</div>
+
+<div>
+  <input type = "text" ng-model = "replybox" name = "Reply">
+  <input type = "button" name = "reply" value = "Reply" ng-click = "reply()">
+  <input type = "button" value = "Delete" ng-click = "delete()">
+  <input type = "button" value = "Mark" ng-click = "important()">
+  <input type = "button" value = "Back" ng-click = "back()">
+</div> 

@@ -1,0 +1,42 @@
+.login{
+  border: solid;
+  border-color:lightgrey;
+  border-width: 1px;
+  padding:3%;
+  border-radius:10px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:60px;
+  width:20%;
+}
+.signup{
+  border: solid;
+  border-color:lightgrey;
+  border-width: 1px;
+  padding:3%;
+  border-radius:10px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:10px;
+  width:20%;
+  text-align:center;
+}
+input{
+  background-color:lightgreen;
+  width:80%;
+  height:4%;
+}
+.loninbtn{
+  background-color:white;
+  width:40%;
+  height:4%;
+}
+.updatbtn{
+  background-color:white;
+  width:10%;
+  height:4%;
+}
+table,tr,th{
+      border: 1px solid black;
+      border-collapse: collapse;
+    }

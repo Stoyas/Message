@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- login -->
+<html>
+  <head>
+    <script src="https://code.angularjs.org/1.5.5/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.5/angular-route.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <div class = "login" ng-app = "signup" ng-controller = "signupCtrl">
+      <img src = "https://media.glassdoor.com/sql/15518/marlabs-squarelogo-1435754175206.png"><br>
+      <label>Username or E-mail address</label> <br>
+      <input class = "inputcls" type="text" name = "username" placeholder = "e-mail address" ng-model = "loginname"> <br><br>
+      <label>Password</label> <br>
+      <input type="password" name = "password" placeholder = "password" ng-model = "loginpassword"><br><br>
+      <input type = "button" value= "Log in" class = "loninbtn" ng-click = "login_home()"><br>
+    </div>
+    <div class = "signup">
+      <p>Don't have an account?</p>
+      <a href = "#/signup" style = "text-decoration:none;float:50%">Sign up now!</a>
+    </div>
+    
+  </body >
+
+</html>
