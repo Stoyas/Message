@@ -4,6 +4,8 @@ var message_global;
 var message_x;
 var index_message;
 var message_reply = [];
+var temp = localStorage.getItem("usersinfo");
+var data = JSON.parse(temp);
 angular.element(document).ready(function(){
  // localStorage.setItem("usersinfo",JSON.stringify(data));
   if (localStorage.getItem("usersinfo") == null)
@@ -11,8 +13,7 @@ angular.element(document).ready(function(){
     localStorage.setItem("usersinfo","[]");
   }
 })
-var temp = localStorage.getItem("usersinfo");
-var data = JSON.parse(temp);
+
 
 var app = angular.module('signup', ["ngRoute"]);
 
@@ -34,6 +35,12 @@ app.controller('signupCtrl',function($scope,$window,$rootScope, $http){
       "Phone": $scope.phn,
       "Location": $scope.lct
     };
+    for(i = 0;i < data.length;i++){
+      if(data[i].UserName==$scope.uname){
+        alert("Username occupied");
+        return;
+      }
+    }
     data.push($scope.user_info)
     localStorage.setItem("usersinfo",JSON.stringify(data));
     window.location.href = "#/login"
@@ -110,6 +117,21 @@ app.controller('customersCtrl', function($scope) {
       var impoindx = localStorage.getItem('messageindex');
       $scope.myData = JSON.parse(temp2);
       $scope.y = $scope.myData[impoindx];
+      
+      $scope.important = function(){
+        //var local = JSON.parse(localStorage.getItem('messages'));
+        
+        if($scope.y.important==="0")
+        {
+          $scope.y.important="1";
+        }
+        else
+        {
+          $scope.y.important="0";
+        }
+        localStorage.setItem("messages",JSON.stringify($scope.myData));
+      }
+
       //console.log($scope.y);
       $scope.delete = function(){
         var temp2 = localStorage.getItem('messageindex');
@@ -132,20 +154,6 @@ app.controller('customersCtrl', function($scope) {
           }
         }
         window.location.href = "#/messagedetail";
-      }
-      
-      $scope.important = function(){
-        var local = JSON.parse(localStorage.getItem('messages'));
-        
-        if($scope.y.important==="0")
-        {
-          $scope.y.important="1";
-        }
-        else
-        {
-          $scope.y.important="0";
-        }
-        localStorage.setItem("messages",JSON.stringify($scope.myData));
       }
       
       $scope.reply = function(){

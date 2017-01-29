@@ -21,11 +21,11 @@
   width:20%;
   text-align:center;
 }
-/* input{
+input.inputcls{
   background-color:lightgreen;
-  width:80%;
+  width:55%;
   height:4%;
-} */
+}
 .loninbtn{
   background-color:white;
   width:40%;
@@ -36,7 +36,11 @@
   width:10%;
   height:4%;
 }
-table,tr,th{
+table,tr,th,td{
       border: 1px solid black;
       border-collapse: collapse;
     }
+table{
+  width: 80%;
+}
+    
